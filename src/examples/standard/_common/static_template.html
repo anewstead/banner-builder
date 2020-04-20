@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- build:template
+  <title><%= banner.size %></title>
+  /build -->
+
+  <style>
+    html,
+    body {
+      border: 0;
+      margin: 0;
+      font-family: sans-serif;
+      font-size: small;
+    }
+
+    .info {
+      text-align: center;
+      margin-top: 20px;
+
+      <!-- build:template
+      width: <%=banner.width %>px;
+      /build -->
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- build:template
+  <img src="<%= banner.image %>">
+  /build -->
+
+  <div class="info">
+    Animated gif or static image,<br>
+    HTML is for preview only.
+  </div>
+</body>
+
+</html>

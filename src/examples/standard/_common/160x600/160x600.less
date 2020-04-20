@@ -1,0 +1,37 @@
+@bannerWidth: 160px;
+@bannerHeight: 600px;
+
+.main_container {
+  width: @bannerWidth;
+  height: @bannerHeight;
+}
+/*
+logo scaler
+scaledHeight = ((origH/origW)*specifiedWidth)
+*/
+.logo {
+  @scaleH: (512px / 512px);
+  @w: 60px;
+  @h: round(@scaleH * @w);
+  width: @w;
+  height: @h;
+  background: url('logo.svg');
+  background-size: @w @h;
+  bottom: 30px;
+  left: 50px;
+  filter: drop-shadow(0px 0px 10px #15163e);
+}
+
+.cta_button {
+  right: 80px;
+  bottom: 170px;
+}
+
+.cta,
+.cta_over {
+  transform: translate(-50%, -50%);
+}
+
+.cta_over {
+  visibility: hidden;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <style type="text/css">
+    body {
+      font: 14px sans-serif;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    #container {
+      margin: 20px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="container">
+
+    <h2>Banners</h2>
+    <div id="banners"></div>
+
+  </div>
+
+  <script>
+    function makeUL(array, prependURL) {
+
+      var currentGroup, list, ul, li, div, a, p;
+
+      div = document.createElement('div');
+
+      array.forEach(function(banner) {
+
+        //new title and list block per creative group
+        if (banner.group !== currentGroup) {
+          p = document.createElement('p');
+          p.innerHTML = banner.group;
+          div.appendChild(p);
+
+          ul = document.createElement('ul');
+          div.appendChild(ul);
+
+          currentGroup = banner.group;
+        }
+        //new list item per size varient
+        li = document.createElement('li');
+        a = document.createElement("a");
+
+        a.textContent = banner.name;
+
+        var rel = banner.group + '/' + banner.name + '/index.html';
+
+        a.setAttribute('href', rel);
+
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+      return div;
+    }
+  </script>
+
+  <!-- build:template
+  <script>
+      var linksData = <%= linksData %>;
+      document.getElementById('banners').appendChild(makeUL(linksData));
+  </script>
+  /build -->
+
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+@-moz-document url-prefix() {
+  div,
+  img,
+  svg {
+    /*fix animation shudder in firefox*/
+    moz-transform: rotate(0.01deg);
+    transform: rotate(0.01deg);
+  }
+}
+
+:focus {
+  outline: none;
+}
+
+::-moz-focus-inner {
+  border: 0;
+}
+
+body,
+html {
+  position: relative;
+  box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+body,
+body * {
+  vertical-align: baseline;
+  border: 0;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  /*fix unusual bottom gap*/
+  display: block;
+  border: 0;
+  /*fix inconsistant scale blur across browsers*/
+  backface-visibility: hidden;
+}
+
+div {
+  /*
+  most things get wrapped in a div
+  when animating we generally need absolute positioning
+  so set once here instead of in lots of other classes
+  set relative on other classes where required
+  */
+  position: absolute;
+}
+
+.btn {
+  cursor: pointer;
+  /*
+  IE fix 'invisble' btns (e.g. an empty div).
+  they need a background to be clickable so add a transparent pixel gif
+  */
+  background: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7');
+}
+
+.main_container {
+  position: relative;
+  overflow: hidden;
+  background-color: #FFFFFF;
+  border: 1px solid #999999;
+}
+
+.loading_state {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.main_content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /*made visible in JS onLoad*/
+  visibility: hidden;
+}
+
+.default_exit {
+  width: 100%;
+  height: 100%;
+}

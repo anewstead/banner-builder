@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- build:template
+  <meta name="ad.size" content="width=<%= banner.width %>,height=<%= banner.height %>">
+  /build -->
+
+  <!-- build:template
+  <title><%= banner.size %></title>
+  /build -->
+
+  <!-- build:template
+  <script type="text/javascript">
+      <%= banner.clicktag %>
+  </script>
+  /build -->
+
+  <!-- build:template
+  <link rel="stylesheet" type="text/css" href="<%= banner.styles %>">
+  /build -->
+
+</head>
+
+<!-- build:template
+	<body class="banner_<%= banner.group %> banner_<%= banner.size %>">
+/build -->
+
+<div class="main_container">
+
+  <div class="loading_state">
+    <!-- <img src="loading.gif" class="loading_img" /> -->
+  </div>
+
+  <div class="main_content">
+
+    <div class="bg"></div>
+
+    <div class="frame_1">
+      <div class="f1_txt1 copy"></div>
+      <div class="f1_txt2 copy"></div>
+      <div class="f1_txt3 copy"></div>
+      <div class="f1_txt4 copy"></div>
+      <div class="f1_txt5 copy"></div>
+      <div class="f1_txt6 copy"></div>
+    </div>
+
+    <div class="frame_2">
+      <div class="f2_txt1 copy"></div>
+      <div class="f2_txt2 copy"></div>
+      <div class="f2_txt3 copy"></div>
+      <div class="f2_txt_end copy"></div>
+    </div>
+
+    <div class="logo"></div>
+
+    <div class="cta_button">
+      <div class="cta_over"></div>
+      <div class="cta"></div>
+    </div>
+
+    <div class="default_exit btn"></div>
+
+
+    <!--end main_content-->
+  </div>
+  <!--end main_container-->
+</div>
+
+<script type="text/javascript" src="https://s0.2mdn.net/ads/studio/cached_libs/tweenmax_1.19.0_643d6911392a3398cb1607993edabfa7_min.js"></script>
+
+<!-- build:template
+<script type="text/javascript" src="<%= banner.script %>"></script>
+/build -->
+</body>
+
+</html>
